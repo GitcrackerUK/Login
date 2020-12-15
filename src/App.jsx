@@ -1,6 +1,13 @@
 import React from 'react';
-import { createGlobalStyle} from 'styled-components';
-import Layout from './components/common/layout'
+import { createGlobalStyle } from 'styled-components';
+import Home from './components/pages/home'
+import Login from './components/pages/login'
+
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
 
 
 const GlobalStyles = createGlobalStyle`
@@ -14,9 +21,16 @@ function App(props) {
   return (
     <div>
       <GlobalStyles></GlobalStyles>
-      <Layout>
-
-      </Layout>
+      <Router>
+        <Switch>
+          <Route path="/login">
+            <Login></Login>
+          </Route>
+          <Route path="/">
+            <Home></Home>
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 }

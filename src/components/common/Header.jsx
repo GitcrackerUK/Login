@@ -10,7 +10,10 @@ display:flex;
 padding:0 16px;
 position:fixed;
 top:0px;
-
+background-color:#cecccc;
+&:Link{
+   text-decoration:none;
+}
 `
 
 export default function Header() {
