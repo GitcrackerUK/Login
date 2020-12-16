@@ -1,7 +1,7 @@
 import React from 'react';
 import { createGlobalStyle } from 'styled-components';
-import Home from './components/pages/home'
-import Login from './components/pages/login'
+import Home from 'components/pages/home'
+import Login from 'components/pages/login'
 
 import {
   BrowserRouter as Router,
@@ -12,8 +12,11 @@ import {
 
 const GlobalStyles = createGlobalStyle`
     body{
-  
-  
+      padding:0px;
+      margin:0px;
+    }
+    *{
+      font-family: 'Lato', sans-serif !important;
     }
 `;
 
