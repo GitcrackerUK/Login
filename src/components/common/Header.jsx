@@ -11,7 +11,7 @@ display:flex;
 padding:0 16px;
 position:fixed;
 top:0px;
-background-color:#cecccc;
+background-color:#eeeeee;
 padding:20px;
 `
 const StLink = styled(Link)`
@@ -25,11 +25,11 @@ color:green;
 export default function Header() {
     return (
         <HeaderWrapper>
-            <StLink to='/'>
-               <Button >Home</Button>
+            <StLink  to='/'>
+               <Button Large >Home</Button>
            </StLink>
             <StLink to='/login'>
-               <Button>Login</Button>
+               <Button Large >Login</Button>
            </StLink>
         </HeaderWrapper>
     )

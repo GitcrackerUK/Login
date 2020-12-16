@@ -15,9 +15,6 @@ const GlobalStyles = createGlobalStyle`
       padding:0px;
       margin:0px;
     }
-    *{
-      font-family: 'Lato', sans-serif !important;
-    }
 `;
 
 function App(props) {

@@ -9,7 +9,7 @@ padding:0 16px;
 box-sizing:border-box;
 font-family:'Open Sands';
 h1,h2,h3,h4,h5,h6{
-    font-family:'Kaushan Script'
+    font-family: 'Lato', sans-serif ;
 }
 `
 
