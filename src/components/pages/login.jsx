@@ -4,8 +4,13 @@ import Layout from 'components/common/layout'
 
 export default function Login() {
     return (
-       <Layout>
-           <h1>Login</h1>
-       </Layout>
+        <Layout>
+
+            <div>
+                <h1>Login</h1>
+         
+            </div>
+
+        </Layout>
     )
 }
