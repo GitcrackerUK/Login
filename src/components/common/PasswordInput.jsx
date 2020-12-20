@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import Input from 'components/common/form'
 
-
 const PasswordInputWrapper = styled.div`
 display:flex;
 `
@@ -11,6 +10,7 @@ const StPasswordInput = styled(Input).attrs(() => ({
     type: "password",
     placeholder: "Password"
 }))`
+
 border-top-right-radius:0px;
 border-bottom-right-radius:0px;
 `
