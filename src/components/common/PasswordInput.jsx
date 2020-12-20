@@ -14,7 +14,7 @@ const StPasswordInput = styled(Input).attrs(() => ({
 border-top-right-radius:0px;
 border-bottom-right-radius:0px;
 `
-const StPasswordInputShow = styled(Input).attrs(() => ({
+const StPasswordInputShown = styled(Input).attrs(() => ({
     type: "text",
     placeholder: "Password"
 }))`
@@ -45,7 +45,7 @@ export default function PasswordInput(props) {
     return (
         <>
             <PasswordInputWrapper>
-               {showPassword?  <StPasswordInputShow {...props}/> : <StPasswordInput {...props} /> } 
+               {showPassword?  <StPasswordInputShown {...props}/> : <StPasswordInput {...props} /> } 
             <ToggledButton onClick={()=>setShowPassword((s)=>!s)}>
                { showPassword?'Hide':'Show'}
             </ToggledButton>
