@@ -24,6 +24,7 @@ border-bottom-right-radius:0px;
 `
 const ToggledButton= styled.div`
 height:40px;
+width:70px;
 border:1px solid #ccc;
 box-sizing:border-box;
 font-size:0.9em;
