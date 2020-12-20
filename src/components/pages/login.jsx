@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Layout from 'components/common/layout'
 import Button from 'components/common/Button'
 import Input from 'components/common/form'
+import Spinner from 'components/common/Spinner'
 import PasswordInput from 'components/common/PasswordInput'
 import styled from 'styled-components'
 
@@ -19,10 +20,12 @@ border-radius:4px;
     opacity:0.6;
 }
 `
-
+let timeout;
 
 export default function Login() {
     const [formField, setFormField] = useState({ username: '', password: '' });
+    const [loading, setLoading] = useState(false);
+
     function handleInputChange(e) {
         e.persist();
         setFormField(
@@ -33,26 +36,47 @@ export default function Login() {
             )
         )
     }
+    function handleSubmit(e) {
+        e.preventDefault();
+        setLoading(true);
+        timeout = setTimeout(() => {
+            setLoading(false);
+        }, 2000)
+    }
+
+    useEffect(() => {
+        return () => {
+            if (timeout) {
+                clearTimeout(timeout)
+            }
+        }
+    }, [])
+
     return (
         <Layout>
-
             <div>
                 <h1>Login</h1>
-                <Form>
-                    <Input
-                        value={formField.username}
-                        onChange={handleInputChange}
-                        type="text"
-                        name="username"
-                        placeholder="Username" />
-                    <PasswordInput
-                        value={formField.password}
-                        onChange={handleInputChange}
-                        name="password"
-                    />
-                    <Button Large Pink >Login</Button>
-                    <div className="alt-text">or</div>
-                    <Button >Register</Button>
+                <Form onSubmit={handleSubmit}>
+                   {loading ? <Spinner/> : <>
+                        <Input
+                            value={formField.username}
+                            onChange={handleInputChange}
+                            type="text"
+                            name="username"
+                            placeholder="Username" />
+                        <PasswordInput
+                            value={formField.password}
+                            onChange={handleInputChange}
+                            name="password"
+                        />
+                    </>}
+                    <Button Large Pink type="submit" disabled={loading}>{loading ? "Loading..." : "Login"}</Button>
+                    {!loading &&
+                        <>
+                            <div className="alt-text">or</div>
+                            <Button type="button" >Register</Button>
+                        </>
+                    }
                 </Form>
             </div>
 
