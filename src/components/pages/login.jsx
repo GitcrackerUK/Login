@@ -1,5 +1,16 @@
 import React from 'react'
 import Layout from 'components/common/layout'
+import styled from 'styled-components'
+
+const Form = styled.form`
+width:100%;
+max-width:400px;
+background:white;
+border:1px solid #eee;
+padding:16px;
+box-sizing:border-box;
+border-radius:4px;
+`
 
 
 export default function Login() {
@@ -8,7 +19,9 @@ export default function Login() {
 
             <div>
                 <h1>Login</h1>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat, nam earum, esse repudiandae ducimus sit asperiores tenetur officiis autem id maiores adipisci beatae molestias aliquid exercitationem vero fuga illo ipsam.</p>
+              <Form>
+                  
+              </Form>
             </div>
 
         </Layout>
