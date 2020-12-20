@@ -47,9 +47,12 @@ export default function PasswordInput(props) {
             <ToggledButton onClick={()=>setShowPassword((s)=>!s)}>
                { showPassword?'Hide':'Show'}
             </ToggledButton>
-            
             </PasswordInputWrapper>
-          
+          <div>
+              {
+                  showPassword?props.value:''
+              }
+          </div>
         </>
     )
 } 
