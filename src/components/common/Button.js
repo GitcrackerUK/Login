@@ -15,6 +15,7 @@ font-weight:bold;
 padding:4px 8px;
 border: 1px solid #ccc;
 border-radius:4px;
+outline:none;
 width:100%;
 box-sizing:border-box;
 background-color:${p=>p.Pink?"#f8049c":"#fdd54f"};

@@ -10,7 +10,7 @@ const StPasswordInput = styled(Input).attrs(() => ({
     type: "password",
     placeholder: "Password"
 }))`
-
+outline:none;
 border-top-right-radius:0px;
 border-bottom-right-radius:0px;
 `
@@ -18,7 +18,6 @@ const StPasswordInputShown = styled(Input).attrs(() => ({
     type: "text",
     placeholder: "Password"
 }))`
-
 border-top-right-radius:0px;
 border-bottom-right-radius:0px;
 `
