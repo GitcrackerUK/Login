@@ -7,6 +7,7 @@ import PasswordInput from 'components/common/PasswordInput'
 import styled from 'styled-components'
 
 const Form = styled.form`
+margin:auto;
 width:100%;
 max-width:400px;
 background:white;
