@@ -1,5 +1,5 @@
 import React from 'react';
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import Home from 'components/pages/home'
 import Login from 'components/pages/login'
 
@@ -17,10 +17,16 @@ const GlobalStyles = createGlobalStyle`
       font-family: 'Lato', sans-serif ;
     }
 `;
+const theme = {
+PrimaryColor:'#f8049c',
+SecondaryColor:'#fdd54f',
+LightGreen:'#81c784',
+DarkGreen:'#2e7d32'
+}
 
 function App(props) {
   return (
-    <div>
+    <ThemeProvider theme={theme}>
       <GlobalStyles></GlobalStyles>
       <Router>
         <Switch>
@@ -32,7 +38,7 @@ function App(props) {
           </Route>
         </Switch>
       </Router>
-    </div>
+    </ThemeProvider>
   );
 }
 
