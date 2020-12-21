@@ -11,10 +11,21 @@ margin:auto;
 display:flex;
 background:black;
 `
-function Toggler(){
-    return(
-        <TogglerWrapper>
+const Notch = styled.div`
+height:21px;
+width:21px;
+border:1px solid #666;
+margin-top:1px;
+background:white;
+border-radius:50%;
+transition:transform 0.1s linear;
+`
 
+
+function Toggler({isActive}) {
+    return (
+        <TogglerWrapper>
+            <Notch isActive={isActive}></Notch>
 
 
         </TogglerWrapper>
