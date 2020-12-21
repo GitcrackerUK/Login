@@ -18,7 +18,7 @@ border-radius:4px;
 outline:none;
 width:100%;
 box-sizing:border-box;
-background-color:${p=>p.Pink?"#f8049c":"#fdd54f"};
+background-color:${p=>p.Primary?p.theme.PrimaryColor:p.theme.SecondaryColor};
 &:disabled{
 background: gray;
 }
