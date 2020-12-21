@@ -10,8 +10,8 @@ display:flex;
 padding:0 16px;
 position:fixed;
 top:0px;
-background-image: linear-gradient(to right, #f8049c, #fdd54f);
-border-bottom:3px solid #fdd54f;
+background-image: linear-gradient(to right,${p=>p.theme.PrimaryColor}, ${p=>p.theme.SecondaryColor});
+border-bottom:3px solid ${p=>p.theme.SecondaryColor};
 `
 const StLink = styled(Link)`
 padding:4px 8px;
