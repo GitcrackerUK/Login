@@ -55,7 +55,7 @@ padding:5px;
 >div{
     border-radius:40%;
     height:3px;
-    background:${p=>p.theme.id==="light"?"#202020":"white"};
+    background:${p=>p.theme.TextColor};
     margin:5px 0;
     width:100%
 }
