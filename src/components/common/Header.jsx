@@ -22,6 +22,7 @@ margin:auto 0px ;
 text-decoration:none;
 color:black;
 opacity:0.6;
+font-size:18px;
 `
 const Menu = styled.nav`
 display:${p=>p.open?"block":"none"};
