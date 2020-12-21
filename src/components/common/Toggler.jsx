@@ -9,7 +9,8 @@ border-radius:25px;
 border:1px solid #666;
 margin:auto;
 display:flex;
-background:black;
+background-image:linear-gradient(to bottom, ${ p=> p.theme.PrimaryColor}, ${
+    p =>p.theme.SecondaryColor});
 `
 const Notch = styled.div`
 height:21px;
@@ -19,12 +20,13 @@ margin-top:1px;
 background:white;
 border-radius:50%;
 transition:transform 0.1s linear;
+transform:translate(${p=>p.isActive?"26px":"1px"});
 `
 
 
-function Toggler({isActive}) {
+function Toggler({isActive,onToggle}) {
     return (
-        <TogglerWrapper>
+        <TogglerWrapper onClick={onToggle}>
             <Notch isActive={isActive}></Notch>
 
 

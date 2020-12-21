@@ -1,5 +1,5 @@
-import React, {useState} from 'react';
-import styled from 'styled-components';
+import React, {useState,useContext } from 'react';
+import styled,{ ThemeContext } from 'styled-components';
 import { NavLink as Link } from 'react-router-dom';
 import Toggler from 'components/common/Toggler';
 
@@ -21,7 +21,7 @@ text-align:center;
 box-sizing:border-box;
 margin:auto 0px ;
 text-decoration:none;
-color:black;
+color:${p=>p.theme.TextColor};
 opacity:0.6;
 font-size:18px;
 `
@@ -34,7 +34,7 @@ width:100%;
 padding:8px;
 box-sizing:border-box;
 height:initial;
-background:white;
+background:${p=>p.theme.BodyColor};
 border-bottom:3px solid #fdd54f;
 @media(min-width:768px){
 background:none;
@@ -55,7 +55,7 @@ padding:5px;
 >div{
     border-radius:40%;
     height:3px;
-    background:black;
+    background:${p=>p.theme.id==="light"?"#202020":"white"};
     margin:5px 0;
     width:100%
 }
@@ -67,8 +67,11 @@ const Active = {
     opacity: 1,
 };
 
+
 export default function Header() {
     const [menuOpen, setMenu] = useState(false);
+    const {id, setTheme} = useContext(ThemeContext);
+
     return (
         <HeaderWrapper>
             <MobileIcon onClick={()=>setMenu(s=> !s)}>
@@ -84,7 +87,7 @@ export default function Header() {
                 <StLink exact to='/' activeStyle={Active}>
                     Home
                 </StLink>
-                <Toggler/>
+                <Toggler isActive={ id ==="light"} onToggle={setTheme}/>
             </Menu>
         </HeaderWrapper>
     )
