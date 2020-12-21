@@ -52,6 +52,7 @@ width:25px;
 min-width:25px;
 padding:5px;
 >div{
+    border-radius:40%;
     height:3px;
     background:black;
     margin:5px 0;
