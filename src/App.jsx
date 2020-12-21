@@ -1,7 +1,10 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import Home from 'components/pages/home'
 import Login from 'components/pages/login'
+import LightTheme from 'Themes/light'
+import DarkTheme from 'Themes/dark'
+
 
 import {
   BrowserRouter as Router,
@@ -12,21 +15,22 @@ import {
 
 const GlobalStyles = createGlobalStyle`
     body{
+      background-color:${p=> p.theme.BodyColor};
+      color:${p=> p.theme.TextColor};
       padding:0px;
       margin:0px;
       font-family: 'Lato', sans-serif ;
     }
 `;
-const theme = {
-PrimaryColor:'#f8049c',
-SecondaryColor:'#fdd54f',
-LightGreen:'#81c784',
-DarkGreen:'#2e7d32'
-}
-
 function App(props) {
+  const [theme, setTheme] = useState(LightTheme)
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={{...theme, setTheme: ()=>{
+     setTheme((s)=> { return (s.id === 'light'? DarkTheme: LightTheme
+     )} );
+     
+    }}}>
+      
       <GlobalStyles></GlobalStyles>
       <Router>
         <Switch>
