@@ -71,7 +71,7 @@ export default function Login() {
                             name="password"
                         />
                     </>}
-                    <Button Large Pink type="submit" disabled={loading}>{loading ? "Loading..." : "Login"}</Button>
+                    <Button Large Primary type="submit" disabled={loading}>{loading ? "Loading..." : "Login"}</Button>
                     {!loading &&
                         <>
                             <div className="alt-text">or</div>
