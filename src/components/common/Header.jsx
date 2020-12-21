@@ -1,6 +1,7 @@
-import React, {useState} from 'react'
-import styled from 'styled-components'
-import { NavLink as Link } from 'react-router-dom'
+import React, {useState} from 'react';
+import styled from 'styled-components';
+import { NavLink as Link } from 'react-router-dom';
+import Toggler from 'components/common/Toggler';
 
 const HeaderWrapper = styled.header`
 height:60px;
@@ -83,6 +84,7 @@ export default function Header() {
                 <StLink exact to='/' activeStyle={Active}>
                     Home
                 </StLink>
+                <Toggler/>
             </Menu>
         </HeaderWrapper>
     )
